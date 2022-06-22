@@ -13,12 +13,12 @@ enum PlayerAction: Action {
     case testData
     case testUpdate(color: UInt, name: String)
     
-    case addPlayer
+    case addPlayer(name: String, color: UInt)
     case deletePlayer(index: Int)
-    case move(from: Int, to: Int)
-    case editPlayer(id:Int, name: String, nickname: String)
+    case move(color: UInt, newPosition: UInt)
+    /*case editPlayer(id:Int, name: String, nickname: String)
     case startUpdatingPlayer
-    case stopUpdatingPlayer
+    case stopUpdatingPlayer*/
 }
 
 protocol Reducer {
@@ -37,22 +37,26 @@ struct PlayerStateReducer: Reducer {
         switch action {
           
         case PlayerAction.testData:
-            state.add(newPlayers: PlayerState.playerColors
-                                    .sorted { $0.value < $1.value }
-                                    .map { Player(name: $0.key, color: $0.value) })
+            let players = PlayerState.playerColors
+                .sorted { $0.value < $1.value }
+                .map { Player(name: $0.key, color: $0.value) }
+            state.add(newPlayers: players)
         case let PlayerAction.testUpdate(color, name):
             state.update(color: color, name: name)
-        //case PlayerAction.addPlayer:
-            
+        case let PlayerAction.addPlayer(name, color):
+            let new = Player(name: name, color: color)
+            print("add player \(new)")
+            state.add(newPlayers: [new])
             /*state.players.append(Player(id: state.players.count,
                                         name: "New Player \(state.players.count)",
                                         nickname: "@nickname\(state.players.count)"))*/
             /*case let PlayerAction.deletePlayer(index):
             if state.players.count > 0 {
                 state.players.remove(at: index)
-            }
-        case let PlayerAction.move(from, to):
-            let player = state.players.remove(at: from)
+            }*/
+        case let PlayerAction.move(color, newPosition):
+            print("PlayerAction.move \(color) \(newPosition)")
+            /*let player = state.players.remove(at: from)
             state.players.insert(player, at: to)
         case let PlayerAction.editPlayer(id, name, nickname):
             var player = state.players[id]

@@ -12,7 +12,8 @@ struct Root: View {
     @EnvironmentObject var viewModel: TilesViewModel
     @EnvironmentObject var state: ImaginariumState
     
-    @State var isPlayerAddView: Bool = false
+    @State var isPlayerAddDialog: Bool = false
+    @State var isMakeTurnDialog: Bool = false
     
     var body: some View {
         ZStack {
@@ -28,8 +29,12 @@ struct Root: View {
                 Spacer().frame(height: 20)
                 buttons
             }
-            .modal(isShowing: $isPlayerAddView, content: {
-                PlayerAddDialog(color: state.playerState.unusedColor, isPlayerAddView: $isPlayerAddView)
+            .modal(isShowing: $isPlayerAddDialog, content: {
+                PlayerAddDialog(color: state.playerState.unusedColor, isPlayerAddDialog: $isPlayerAddDialog)
+                    .environmentObject(state)
+            })
+            .modal(isShowing: $isMakeTurnDialog, content: {
+                MakeTurnDialog(isMakeTurnDialog: $isMakeTurnDialog)
                     .environmentObject(state)
             })
         }
@@ -38,19 +43,20 @@ struct Root: View {
     var buttons: some View {
         HStack {
             GameControlButton {
-                isPlayerAddView.toggle()
+                isPlayerAddDialog.toggle()
             } label: {
                 Text("Add Player")
             }
             GameControlButton {
-                state.dispatch(action: PlayerAction.testData)
+                isMakeTurnDialog.toggle()
             } label: {
-                Text("Test Players")
+                Text("Make Turn")
             }
             GameControlButton {
-                print(state.playerState.players.elements.map{"\($0)"}.joined(separator: "\n"))
+                state.dispatch(action: PlayerAction.testData)
+                //print(state.playerState.players.elements.map{"\($0)"}.joined(separator: "\n"))
             } label: {
-                Text("Test")
+                Text("Test Data")
             }
         }
     }

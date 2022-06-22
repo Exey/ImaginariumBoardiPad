@@ -58,7 +58,13 @@ struct TileCell: View {
     var index: UInt8
     var type: TileType
     
+    var columns: [GridItem] = Array(repeating: .init(), count: 8)
+    
     var body: some View {
+        tile
+    }
+    
+    var tile: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(.clear)
@@ -66,23 +72,30 @@ struct TileCell: View {
             VStack(alignment: .leading) {
                 HStack {
                     VStack {
-                        //Image(systemName: "\(index).square.fill")
                         Text("\(index)")
                             .foregroundColor(.white)
                             .font(.system(size: 40))
-                            //.padding()
-                            //.shadow(color: .black, radius: 1)
-                        
+                            
                         imageByTileType(type: type)
                             .foregroundColor(.white)
                             .font(.largeTitle)
                             .font(.system(size: 24))
                     }
-                    .frame(width: 80)
+                    .padding(0)
+                    .frame(width: 60)
                     //.padding(.top, 6)
-                    Spacer()
-                }
-            }
+                    if index > 2 {
+                        Spacer()
+                    } else {
+                        LazyVGrid(columns: columns, spacing: 8) {
+                            ForEach(0..<16, id: \.self) { i in
+                                Image(systemName: "\(i+1).square.fill")
+                                    .font(.title)
+                            }
+                        }.padding(0)
+                    }
+                }.padding(0)
+            }.padding(0)
         }
         .background(Material.ultraThin)
         .clipShape(RoundedRectangle(cornerRadius: 30))

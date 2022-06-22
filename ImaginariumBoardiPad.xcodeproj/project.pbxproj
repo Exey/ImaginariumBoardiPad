@@ -14,7 +14,6 @@
 		FA4B6AC728501E80003914E6 /* TilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B6AC628501E80003914E6 /* TilesView.swift */; };
 		FA4B6AC928501E92003914E6 /* PlayersTrainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B6AC828501E92003914E6 /* PlayersTrainView.swift */; };
 		FAB5D773285BB708008BAB28 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5D772285BB708008BAB28 /* Modal.swift */; };
-		FAB5D777285BB7A6008BAB28 /* ModalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5D775285BB7A6008BAB28 /* ModalTextField.swift */; };
 		FAB5D77E285BBCEB008BAB28 /* ModalTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5D77D285BBCEB008BAB28 /* ModalTextEditor.swift */; };
 		FAB5D780285BD73B008BAB28 /* PlayerTrainTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5D77F285BD73B008BAB28 /* PlayerTrainTileView.swift */; };
 		FAE81D4A2852A69B007E381A /* GameControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE81D492852A69B007E381A /* GameControlButton.swift */; };
@@ -26,6 +25,8 @@
 		FAF38E26284435A90069B7B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF38E25284435A90069B7B3 /* Assets.xcassets */; };
 		FAF38E29284435A90069B7B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF38E28284435A90069B7B3 /* Preview Assets.xcassets */; };
 		FAF38E302844450C0069B7B3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF38E2F2844450C0069B7B3 /* Color.swift */; };
+		FAFCA3432863A7FA0003B6CC /* MakeTurnDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCA3422863A7FA0003B6CC /* MakeTurnDialog.swift */; };
+		FAFCA3452863AC080003B6CC /* PlayerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFCA3442863AC080003B6CC /* PlayerCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +37,6 @@
 		FA4B6AC628501E80003914E6 /* TilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilesView.swift; sourceTree = "<group>"; };
 		FA4B6AC828501E92003914E6 /* PlayersTrainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTrainView.swift; sourceTree = "<group>"; };
 		FAB5D772285BB708008BAB28 /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
-		FAB5D775285BB7A6008BAB28 /* ModalTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTextField.swift; sourceTree = "<group>"; };
 		FAB5D77D285BBCEB008BAB28 /* ModalTextEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTextEditor.swift; sourceTree = "<group>"; };
 		FAB5D77F285BD73B008BAB28 /* PlayerTrainTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTrainTileView.swift; sourceTree = "<group>"; };
 		FAE81D492852A69B007E381A /* GameControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControlButton.swift; sourceTree = "<group>"; };
@@ -49,6 +49,8 @@
 		FAF38E25284435A90069B7B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF38E28284435A90069B7B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAF38E2F2844450C0069B7B3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		FAFCA3422863A7FA0003B6CC /* MakeTurnDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTurnDialog.swift; sourceTree = "<group>"; };
+		FAFCA3442863AC080003B6CC /* PlayerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				FAB5D772285BB708008BAB28 /* Modal.swift */,
-				FAB5D775285BB7A6008BAB28 /* ModalTextField.swift */,
 				FAB5D77D285BBCEB008BAB28 /* ModalTextEditor.swift */,
 			);
 			path = Modal;
@@ -138,6 +139,8 @@
 				FA4B6AC828501E92003914E6 /* PlayersTrainView.swift */,
 				FAB5D77F285BD73B008BAB28 /* PlayerTrainTileView.swift */,
 				FAE81D50285679F7007E381A /* PlayerAddDialog.swift */,
+				FAFCA3442863AC080003B6CC /* PlayerCardView.swift */,
+				FAFCA3422863A7FA0003B6CC /* MakeTurnDialog.swift */,
 				FAF38E25284435A90069B7B3 /* Assets.xcassets */,
 				FAF38E27284435A90069B7B3 /* Preview Content */,
 			);
@@ -222,7 +225,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB5D777285BB7A6008BAB28 /* ModalTextField.swift in Sources */,
 				FAE81D4A2852A69B007E381A /* GameControlButton.swift in Sources */,
 				FA4B6AC428501E14003914E6 /* PlayerStateReducer.swift in Sources */,
 				FAB5D773285BB708008BAB28 /* Modal.swift in Sources */,
@@ -232,12 +234,14 @@
 				FAB5D77E285BBCEB008BAB28 /* ModalTextEditor.swift in Sources */,
 				FAE81D4C2852A8B4007E381A /* TilesViewModel.swift in Sources */,
 				FA4B6AC128501E14003914E6 /* ImaginariumState.swift in Sources */,
+				FAFCA3452863AC080003B6CC /* PlayerCardView.swift in Sources */,
 				FA4B6AC528501E14003914E6 /* Player.swift in Sources */,
 				FAE81D4F28567599007E381A /* Queue.swift in Sources */,
 				FA4B6AC928501E92003914E6 /* PlayersTrainView.swift in Sources */,
 				FAF38E302844450C0069B7B3 /* Color.swift in Sources */,
 				FA4B6AC728501E80003914E6 /* TilesView.swift in Sources */,
 				FAB5D780285BD73B008BAB28 /* PlayerTrainTileView.swift in Sources */,
+				FAFCA3432863A7FA0003B6CC /* MakeTurnDialog.swift in Sources */,
 				FA4B6AC328501E14003914E6 /* PlayerState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

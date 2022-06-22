@@ -23,7 +23,7 @@ public struct GameControlButton<Content>: View where Content: View {
             .padding()
             .padding(.bottom, 2)
             .foregroundColor(.white)
-            .background(Color(hex: 0x3b3b5c))
+            .background(Color("uiBackground"))
             .cornerRadius(16)
         .fixedSize(horizontal: true, vertical: true)
         .simultaneousGesture(

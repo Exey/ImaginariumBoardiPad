@@ -37,11 +37,11 @@ struct PlayerState {
         let allColors: [UInt] = PlayerState.playerColors.map { $0.value }
         let usedColors: [UInt] = players.elements.map { $0.color }
         
-        print(usedColors)
-        print(allColors)
+        //print(usedColors)
+        //print(allColors)
         
         let diff = allColors.applying(allColors.difference(from: usedColors))
-        print(diff as Any)
+        print("DIFF", diff as Any)
         
         //var diffArray: [UInt] = .init()
         //allColors.difference(from: usedColors).forEach { diffArray.append( $0. ) }

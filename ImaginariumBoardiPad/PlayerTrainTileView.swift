@@ -19,7 +19,8 @@ struct PlayerTrainTileView: View {
             VStack {
                 Text(title)
                     .foregroundColor(.white)
-                    .shadow(radius: 3)
+                    .shadow(color: .black, radius: 4)
+                    .shadow(color: .black, radius: 4)
             }
             .frame(height: 68)
         }

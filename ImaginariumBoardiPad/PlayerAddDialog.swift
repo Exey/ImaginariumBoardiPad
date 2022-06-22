@@ -22,15 +22,15 @@ struct PlayerAddDialog: View {
         }
     }
     
-    @Binding var isPlayerAddView: Bool
+    @Binding var isPlayerAddDialog: Bool
     
     var columns: [GridItem] = Array(repeating: .init(), count: 4)
     
     var body: some View {
         VStack(spacing:24){
-            Text(name)
-                .foregroundColor(Color(hex: color))
-                .font(.title.bold())
+            
+            PlayerCardView(color: $color, name: $name, size: 80)
+            
             ModalTextEditor(placeholder: "Player name", string: $name, textEditorHeight: 48)
             
             HStack(spacing: 12) {
@@ -47,8 +47,9 @@ struct PlayerAddDialog: View {
             .padding(.top, 10)
             
             Button {
-                print("Save")
-                isPlayerAddView.toggle()
+                state.dispatch(action: PlayerAction.addPlayer(name: name, color: color))
+                print("Save \(color) \(name)")
+                //isPlayerAddView.toggle()
             } label: {
                 HStack{
                     Spacer()
@@ -63,11 +64,11 @@ struct PlayerAddDialog: View {
             .tint(.accentColor)
             
             Button {
-                isPlayerAddView.toggle()
+                isPlayerAddDialog.toggle()
             } label: {
                 HStack{
                     Spacer()
-                    Text("Cancel")
+                    Text("Close")
                         .foregroundColor(.red)
                     Spacer()
                 }

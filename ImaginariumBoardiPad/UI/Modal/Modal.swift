@@ -47,7 +47,7 @@ struct Modal<ModalContent:View>: ViewModifier {
                 .padding(40)
                 .background(
                     RoundedRectangle(cornerRadius: 24)
-                        .foregroundColor(Color("dialogBackground"))
+                        .foregroundColor(Color("uiBackground"))
                 )
             }
         }
