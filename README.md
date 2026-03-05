@@ -1,7 +1,5 @@
 # Imaginarium Board — iPad Digital Game Board
 
-## Overview
-
 **Imaginarium Board** is a digital companion app for the popular association-based board game *Imaginarium* (Имаджинариум). The app replaces the physical game board, player tokens, and score tracking — allowing **up to 16 players** to play simultaneously (the physical game only supports up to 7).
 
 The app is designed for **iPad in portrait orientation** and serves as a shared game board placed in the center of the table while players hold their physical cards.
