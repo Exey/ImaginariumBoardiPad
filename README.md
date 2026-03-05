@@ -14,48 +14,12 @@ The physical Imaginarium game is limited to 7 players due to the number of token
 - **No card count restrictions** — the app assumes you have multiple physical decks
 - **Victory at 40 points** (cell 39 on the board), but the game can continue beyond if players choose
 
-## Game Rules (Quick Reference)
-
-Imaginarium is a game of associations played with illustrated cards.
-
-### Setup
-1. Each player picks a color and gets voting tokens equal to the number of players
-2. Deal 6 cards to each player from the combined deck(s)
-3. Choose a starting leader (host)
-
-### Round Flow
-1. **Leader's Association** — The leader picks a card and announces an association (word, phrase, quote, gesture, sound — anything)
-2. **Other Players Choose** — Everyone else picks the card from their hand that best matches the association and places it face-down
-3. **Shuffle & Reveal** — All cards (including the leader's) are shuffled and laid out face-up, numbered for voting
-4. **Vote** — Each non-leader player secretly votes for the card they think is the leader's (cannot vote for their own card)
-5. **Score** — Points are awarded based on who guessed correctly
-
-### Scoring
-| Who | Condition | Points |
-|-----|-----------|--------|
-| Leader | At least one (but not all) players guessed correctly | **3** + 1 per correct guesser |
-| Leader | Everyone guessed correctly (too easy) | **0** |
-| Leader | Nobody guessed correctly (too hard) | **0** |
-| Guesser | Correctly identified the leader's card | **3** |
-| Any non-leader | For each vote their own card received from other players | **+1** per vote |
-
-6. **End of Round** — Discard played cards, draw replacements to refill to 6, pass the leader role clockwise
-
-### Special Cells on the Board
-Certain board positions have special rules for the leader's association:
-- **4 Words** (cells 3, 18, 25, 28) — Association must be exactly 4 words
-- **Question** (cells 6, 10, 17, 26) — Association must be phrased as a question
-- **Brand/Logo** (cells 12, 23, 29, 35) — Association must reference a brand or logo
-- **TV/Cinema** (cells 5, 21, 31, 38) — Association must be from a movie or TV show
-- **Narrative** (cells 8, 15, 19, 32) — Association must be a story or narrative phrase
-
-### End of Game
-The game ends when any player reaches or passes **cell 39 (40 points)**. The player furthest ahead wins. Players may agree to continue playing beyond 40 if desired.
+![https://i.postimg.cc/BqgK0jPr/tg.png](https://i.postimg.cc/k9TCQTW2/imaginarium.png)
 
 ## App Architecture
 
 ### Tech Stack
-- **Swift 6** with strict concurrency
+- **Swift 6** 
 - **SwiftUI** with `@Observable` macro (iOS 17+)
 - **iPad-only**, portrait orientation
 
