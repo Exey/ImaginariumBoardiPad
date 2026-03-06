@@ -14,12 +14,28 @@ The physical Imaginarium game is limited to 7 players due to the number of token
 
 ![https://i.postimg.cc/BqgK0jPr/tg.png](https://i.postimg.cc/k9TCQTW2/imaginarium.png)
 
-## App Architecture
+## How to Use
 
-### Tech Stack
-- **Swift 6** 
-- **SwiftUI** with `@Observable` macro (iOS 17+)
-- **iPad-only**, portrait orientation
+1. Launch the app on an iPad (portrait orientation)
+2. Tap **"Add Player"** to add 4–16 players, choosing a name and color for each
+3. Tap **"New Round"** when the leader has given their association and voting is complete
+4. In the scoring dialog, mark which players guessed correctly and enter any bonus votes
+5. The board updates automatically — player tokens move along the serpentine path
+6. First player to reach cell 39 wins! (or keep going if you want)
+
+### Key Features
+
+| Feature | Description |
+|---------|-------------|
+| **16-player support** | Pick from 16 distinct colors; board cells show all player tokens |
+| **Serpentine board** | 39 cells arranged in a snake pattern (right→left→right…) matching the physical board |
+| **Special cells** | Visual indicators for special association rules on designated cells |
+| **Score tracking** | Per-round scoring dialog: mark who guessed correctly, auto-calculate points |
+| **Player tokens on board** | Each cell shows colored dots/icons for all players currently on that cell |
+| **Current leader indicator** | Visual highlight showing whose turn it is to lead |
+| **Continue past 40** | Optional setting to keep playing after someone reaches the finish |
+| **Add/remove players** | Manage players at any time during the game |
+| **Undo last move** | Roll back the most recent scoring round |
 
 ### Project Structure
 
@@ -61,32 +77,9 @@ The app uses SwiftUI's `@Observable` macro (replacing the legacy Flux/Reducer pa
 - Player actions (add, remove, move on board, score) are methods on `GameState`
 - Board tile data is computed/static and doesn't change during gameplay
 
-### Key Features
-
-| Feature | Description |
-|---------|-------------|
-| **16-player support** | Pick from 16 distinct colors; board cells show all player tokens |
-| **Serpentine board** | 39 cells arranged in a snake pattern (right→left→right…) matching the physical board |
-| **Special cells** | Visual indicators for special association rules on designated cells |
-| **Score tracking** | Per-round scoring dialog: mark who guessed correctly, auto-calculate points |
-| **Player tokens on board** | Each cell shows colored dots/icons for all players currently on that cell |
-| **Current leader indicator** | Visual highlight showing whose turn it is to lead |
-| **Continue past 40** | Optional setting to keep playing after someone reaches the finish |
-| **Add/remove players** | Manage players at any time during the game |
-| **Undo last move** | Roll back the most recent scoring round |
-
-## How to Use
-
-1. Launch the app on an iPad (portrait orientation)
-2. Tap **"Add Player"** to add 4–16 players, choosing a name and color for each
-3. Tap **"New Round"** when the leader has given their association and voting is complete
-4. In the scoring dialog, mark which players guessed correctly and enter any bonus votes
-5. The board updates automatically — player tokens move along the serpentine path
-6. First player to reach cell 39 wins! (or keep going if you want)
-
 ## Development Notes
 
 - Minimum deployment target: **iOS 17.0** (for `@Observable`)
-- Optimized for **iPad portrait** — landscape is not officially supported
+- Optimized for **iPad portrait** (landscape with ScrollView)
 - No network features — fully offline, single-device shared board
 - Test Data button populates all 16 player colors for development/demo purposes
