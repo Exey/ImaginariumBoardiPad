@@ -37,8 +37,10 @@ struct PlayerListView: View {
                         .font(.system(size: 12))
                         .foregroundStyle(.yellow)
                         .offset(x: 6, y: -6)
+                        .transition(.scale(scale: 0.3).combined(with: .opacity))
                 }
             }
+            .animation(.spring(response: 0.4, dampingFraction: 0.6), value: isLeader)
 
             Text(player.name)
                 .font(.caption2.weight(.medium))
@@ -48,6 +50,7 @@ struct PlayerListView: View {
             Text("\(player.position)")
                 .font(.system(size: 16, weight: .bold, design: .rounded))
                 .foregroundStyle(Color(hex: player.colorHex))
+                .contentTransition(.numericText())
         }
         .frame(width: 70)
         .padding(.vertical, 8)
@@ -63,5 +66,6 @@ struct PlayerListView: View {
                         )
                 )
         )
+        .animation(.spring(response: 0.4, dampingFraction: 0.7), value: isLeader)
     }
 }

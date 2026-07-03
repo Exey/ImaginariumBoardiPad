@@ -32,7 +32,9 @@ struct ManualMoveDialog: View {
 
                             HStack(spacing: 10) {
                                 Button {
-                                    gameState.movePlayer(id: player.id, by: -1)
+                                    withAnimation(.spring(response: 0.45, dampingFraction: 0.65)) {
+                                        gameState.movePlayer(id: player.id, by: -1)
+                                    }
                                 } label: {
                                     Image(systemName: "minus.circle.fill")
                                         .font(.title2)
@@ -44,9 +46,12 @@ struct ManualMoveDialog: View {
                                     .font(.system(size: 22, weight: .bold, design: .rounded))
                                     .foregroundStyle(.white)
                                     .frame(width: 40)
+                                    .contentTransition(.numericText())
 
                                 Button {
-                                    gameState.movePlayer(id: player.id, by: 1)
+                                    withAnimation(.spring(response: 0.45, dampingFraction: 0.65)) {
+                                        gameState.movePlayer(id: player.id, by: 1)
+                                    }
                                 } label: {
                                     Image(systemName: "plus.circle.fill")
                                         .font(.title2)

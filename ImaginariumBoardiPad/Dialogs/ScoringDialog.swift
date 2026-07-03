@@ -261,7 +261,9 @@ struct ScoringDialog: View {
 
     private var applyButton: some View {
         Button {
-            gameState.applyRound(deltas: deltas)
+            withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                gameState.applyRound(deltas: deltas)
+            }
             dismiss()
         } label: {
             Text("APPLY SCORES")

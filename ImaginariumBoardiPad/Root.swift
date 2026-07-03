@@ -192,7 +192,9 @@ struct Root: View {
                 .opacity(gameState.players.isEmpty ? 0.4 : 1)
 
                 actionButton("Undo", icon: "arrow.uturn.backward", color: .yellow) {
-                    gameState.undoLastRound()
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                        gameState.undoLastRound()
+                    }
                 }
                 .disabled(gameState.history.isEmpty)
                 .opacity(gameState.history.isEmpty ? 0.4 : 1)
@@ -226,5 +228,15 @@ struct Root: View {
                     .stroke(color.opacity(0.5), lineWidth: 1)
             )
         }
+        .buttonStyle(SpringPressButtonStyle())
+    }
+}
+
+/// Scales a button down on press and springs it back on release.
+struct SpringPressButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.94 : 1)
+            .animation(.spring(response: 0.3, dampingFraction: 0.5), value: configuration.isPressed)
     }
 }

@@ -8,13 +8,14 @@ import SwiftUI
 struct BoardView: View {
 
     @Environment(GameState.self) private var gameState
+    @Namespace private var tokenNamespace
 
     var body: some View {
         VStack(spacing: 6) {
             ForEach(Array(gameState.boardGrid.enumerated()), id: \.offset) { _, row in
                 HStack(spacing: 6) {
                     ForEach(row) { tile in
-                        TileCell(tile: tile)
+                        TileCell(tile: tile, tokenNamespace: tokenNamespace)
                     }
                     // Fill remaining space if row has < 4 items (last row)
                     if row.count < 4 {
@@ -27,6 +28,7 @@ struct BoardView: View {
                 }
             }
         }
+        .accessibilityLabel("Game Board")
     }
 }
 
@@ -34,6 +36,7 @@ struct TileCell: View {
 
     @Environment(GameState.self) private var gameState
     let tile: Tile
+    let tokenNamespace: Namespace.ID
 
     private var playersHere: [Player] {
         gameState.playersOnTile(tile.index)
@@ -86,6 +89,7 @@ struct TileCell: View {
                 }
             }
         }
+        .accessibilityLabel("Game Tile")
         .frame(maxWidth: .infinity)
         .frame(height: 90)
     }
@@ -123,6 +127,8 @@ struct TileCell: View {
                         Circle()
                             .stroke(.white.opacity(0.4), lineWidth: 0.5)
                     )
+                    .matchedGeometryEffect(id: player.id, in: tokenNamespace)
+                    .transition(.scale.combined(with: .opacity))
             }
         }
     }
